@@ -61,6 +61,22 @@ body{
 #btn:hover{
     background-color:#83AE29 ;
 }
+.btn{
+    margin: 7px 0px 0px 80px;
+    padding: 12px 30px 12px 30px;
+    font-family: lato;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border-style: none;
+    background-color:#8F3767;
+    color: white;
+    outline: none;
+}
+.btn:hover{
+    background-color:#83AE29 ;
+}
 
 .a{
     color: white;
@@ -196,11 +212,11 @@ body{
     margin: 450px 0px 0px 235px;
     z-index: 2;        
 }
-#pic9{
+#pic7{
     position: absolute;
-    margin: 450px 0px 0px 45px;
-    z-index: 2;
-    transform: rotate(-58deg);
+    margin: 436px 0px 0px 400px;
+    z-index: 2; 
+    transform: rotate(-10deg);   
 }
 .rowOne{    
     position: absolute;

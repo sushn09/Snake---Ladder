@@ -6,69 +6,53 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="Tutorial.css" type="text/css" />
-    <title>Snakes And Ladders - Tutorial</title>
+    <title>Tutorial</title>
 </head>
 
 <body>
     <div class="container1" style="display:auto">
-
-        <div class="login">
+        <div class="login">            
             <div class="start" style="display: auto">
-                <img src="S&L.png" height="270px" width="490px" id="snake" />
+                <h1 style="text-align:center; margin-top: 150px"><br>Snakes & Ladders<br>Tutorial</h1>
+                <img src="S&L.png" height="270px" width="490px" id="snake" style="margin: -15px 0px 0px 155px;" />
                 <div class="frm">
-                    <input type="text" placeholder="First User Name...." class="txt" id="firstPlayerName" />
-                    <input type="text" placeholder="Second User Name...." class="txt" id="secondPlayerName" />
-                    <button id="btn">Start</button>
+                    <button id="btn" style="margin-top: -7px;">Start</button>
                 </div>
             </div>
-            <div class="end" style="display: none">
-                <img src="Winner.png" height="300px" width="250px" id="man" />
-                <h1 id="winner">Winner is <span id="winnerName"></span></h1>
-                <button id="btn" class="next">Next</button>
-            </div>
-        </div>
-        <div class="endask" style="display: none">
-            <img src="S&L.png" height="270px" width="490px" id="snake" />
-            <h1 style="text-align:center; margin-top: 15px">Do you want to play again?</h1>
-            <button id="btn"><a href="Double S&L Board1.html" style="color: white;">Yes</a></button>
-            <button id="btn" style="margin: 7px 0px 0px 430px;" class="no">No</button>
-        </div>
-        <div class="again" style="display: none">
-            <img src="Thank you.jpg" height="250px" width="250px" id="man" />
-            <h1 style="text-align:center; margin-top: 50px">Thank you for playing!!! <br> Hope you enjoyed it</h1>
         </div>
     </div>
-
     <div class="game">
         <div class="playerOne">
             <div class="playerOneProfile">
-                <img src="person.png" height="150px" width="150px" id="user1" />
-                <h2 id="name2">user</h2>
-                <h2 id="name1WinningRatio">Winning Ratio :<span id="playerOneScore">0</span>%</h2>
+                <h2 id="name1">
+                    <p class="r1">Roll the dice and your counter will move forward the number of spaces shown on the dice.</p>
+                    <p class="r2">Roll the dice and if your counter lands at the bottom of a ladder, your counter will move up to the top of the ladder.</p>
+                    <p class="r3">Roll the dice and if your counter lands on the head of a snake, your counter will slide down to the bottom of the snake</p>
+                    <p class="r4">The first player to get to the space that says '100' is the winner.</p>
+                    <p class="r5">Good. Now press NEXT</p>
+                    <p class="r6">Now press START</p>
 
-            </div>
-            <div class="dice">
-                <div class="dot1">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-
-                <div class="dot2">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-                <div class="dot3">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-
-            </div>
-            <button id="btn" style="margin: 650px 0px 0px 115px;"><a href="Double S&L Board1.html" class='a'>Reset Game</a></button>
-
+                </h2>
+                <script>
+                    $(document).ready(function(){
+                        $("p").fadeOut();
+                        $("p.r1").fadeIn();                        
+                    });
+                </script>
+            </div> 
         </div>
+
+    
         <div class="game-container">
-            <img src="ladder.png" height="130px" width="60px" id='pic6' /> <!-- 5 ladder -->
-            <img src="snake.png" height="160px" width="70px" id='pic9' /> <!-- 11 snake -->
+            <img class="l1" src="ladder.png" height="130px" width="60px" id='pic6' /> <!-- 5 ladder -->
+            <img class="s1" src="snake.png" height="150px" width="100px" id='pic7' /> <!-- 28 snake -->
+
+            <script>
+                $(document).ready(function(){
+                    $("img.l1").fadeOut();  
+                    $("img.s1").fadeOut();                        
+                });
+            </script>
 
         <!-- Board-->
         <div class="rowOne">
@@ -592,14 +576,13 @@
                 </div>
             </div>
         </div>
-        <button id="btn" style="margin: 650px 0px 0px 240px;"><a href="Double S&L Board2.html" class='a'>Change Board</a></button>
-
+        <button class="btn" style="margin: 650px 0px 0px 240px;">NEXT</button>
+        
         <div class="playerTwo">
             <div class="playerOneProfile">
                 <img src="person.png" height="150px" width="150px" id="user1" />
-                <h2 id="name1">User</h2>
-                <h2 id="name1WinningRatio">Winning Ratio :<span id="playerTwoScore">0</span>%</h2>
-
+                <h2 id="name1">Player</h2>
+               
             </div>
             <div class="dice2">
                 <div class="dot1">
@@ -615,15 +598,14 @@
                     <div class="dots"></div>
                     <div class="dots"></div>
                 </div>
-            </div>
-
-            <button id="btn" style="margin: 650px 0px 0px 115px;"><a href="Homepage.html" class='a'>Restart Game</a></button>
-        </div>
+            </div> 
+            <button id="btn" style="margin: 650px 0px 0px 115px;"><a href="Homepage.html" class='a'>START GAME</a></button>           
+        </div>        
     </div>
     <script>
         $(document).ready(function() {
             var score = 0;
-            var tern = 2;
+            var tern = 1;
             var playerOneTotalScore = 0;
             var playerTwoTotalScore = 0;
             var firstPlayerName = '';
@@ -632,8 +614,8 @@
                 $('.container1').hide();
                 firstPlayerName = $('#firstPlayerName').val();
                 secondPlayerName = $('#secondPlayerName').val();
-                $('#name1').text(firstPlayerName.toUpperCase());
                 $('#name2').text(secondPlayerName.toUpperCase());
+                $('#name1').text(firstPlayerName.toUpperCase());
             });
 
             $('.next').click(function() {
@@ -650,16 +632,52 @@
                     $('.endask').hide();
                     $('.again').show();
             });
-
+            $('.btn').click(function() {
+                $("p").fadeOut();
+                if (tern == 2){
+                    $("p.r2").fadeIn();
+                    $("img.l1").fadeIn();
+                }
+                if (tern == 3){
+                    $("p.r3").fadeIn();
+                    $("img.s1").fadeIn();
+                }
+                if (tern == 4){
+                    $("p.r4").fadeIn();  
+                    $("p.r6").fadeIn();                
+                }
+            });
+            
             $('.dice2').click(function() {
-                if (tern % 2 == 0) {
-                    var num = Math.ceil(Math.random() * 6);
+                
+                if (tern == 1) {
+                    num = 3;
 
                     score = num;
                     playerOneTotalScore += score;
 
                     tern++;
-                }
+                    $("p.r1").fadeOut();
+                    $("p.r5").fadeIn();   
+                }   
+                
+                else if (tern == 2) {                   
+                    num = 2;
+                    score = num;
+                    playerOneTotalScore += score;
+                    tern++;
+                    $("p.r2").fadeOut();
+                    $("p.r5").fadeIn();
+                }     
+                else if (tern == 3) {                   
+                   num = 3;
+                   score = num;
+                   playerOneTotalScore += score;
+                   tern++;
+                   $("p.r3").fadeOut();
+                   $("p.r5").fadeIn();
+               }          
+                
                 $('.dots').hide();
                 for (var i = 0; i < num; i++) {
                     $('.dots').eq(i).show();
@@ -682,8 +700,7 @@
                 $('.oneGreen').eq((playerOneTotalScore - 1)).css({
                     background: 'green',
                 });
-                console.log(playerOneTotalScore);
-                //5 ladder
+                console.log(playerOneTotalScore);//5 ladder
                 if (playerOneTotalScore == 5) {
                     playerOneTotalScore += 20;
                     $('.oneGreen').css({
@@ -693,11 +710,11 @@
                     $('.oneGreen').eq((playerOneTotalScore - 1)).css({
                         background: 'green',
                     });
-                }
 
-                //11 snake 
-                if (playerOneTotalScore == 11) {
-                    playerOneTotalScore -= 8;
+                }
+                //28 snake
+                if (playerOneTotalScore == 28) {
+                    playerOneTotalScore -= 20;
                     $('.oneGreen').css({
                         background: 'none',
                     });
@@ -707,86 +724,8 @@
                     });
 
                 }
-
-                $('#playerTwoScore').text(playerOneTotalScore);
-                if (playerOneTotalScore >= 100) {
-                    $('.container1').show();
-                    $('.start').hide();
-                    $('.end').show();
-                    $('#winnerName').text(firstPlayerName.toUpperCase());
-
-                }
-            });
-
-            //dice1
-            $('.dice').click(function() {
-                if (tern % 2 != 0) {
-                    var num = Math.ceil(Math.random() * 6);
-
-                    score = num;
-                    playerTwoTotalScore += score;
-
-                    tern++;
-                }
-                $('.dot').hide();
-                for (var i = 0; i < num; i++) {
-                    $('.dot').eq(i).show();
-
-                }
-
-                $('.dice').css({
-                    borderColor: 'black',
-                    boxShadow: 'black 1px 2px 20px 10px',
-
-
-                });
-                $('.dice2').css({
-                    borderColor: 'green',
-                    boxShadow: 'green 1px 1px 20px 9px',
-
-
-                });
-
-                $('.oneRed').css({
-                    background: 'none',
-                });
-
-                $('.oneRed').eq((playerTwoTotalScore - 1)).css({
-                    background: 'red',
-                });
-                console.log(playerTwoTotalScore);
-
-                //5 ladder
-                if (playerTwoTotalScore == 5) {
-                    playerTwoTotalScore += 20;
-                    $('.oneRed').css({
-                        background: 'none',
-                    });
-
-                    $('.oneRed').eq((playerTwoTotalScore - 1)).css({
-                        background: 'red',
-                    });
-
-                }
-                //11 snake
-                if (playerTwoTotalScore == 11) {
-                    playerTwoTotalScore -= 8;
-                    $('.oneRed').css({
-                        background: 'none',
-                    });
-
-                    $('.oneRed').eq((playerTwoTotalScore - 1)).css({
-                        background: 'red',
-                    });
-                }
                 
-                $('#playerOneScore').text(playerTwoTotalScore);
-                if (playerTwoTotalScore >= 100) {
-                    $('.container1').show();
-                    $('.start').hide();
-                    $('.end').show();
-                    $('#winnerName').text(secondPlayerName.toUpperCase());
-                }
+                
             });
         });
     </script>
